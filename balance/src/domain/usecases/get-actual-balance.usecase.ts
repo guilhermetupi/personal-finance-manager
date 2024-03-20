@@ -1,4 +1,4 @@
-import { GetActualBalanceRepositoryPort } from "@/ports/repositories";
+;import { GetActualBalanceRepositoryPort } from "@/ports/database/repositories";
 import { Balance } from "../entities";
 import { InternalServerError, NotFoundError } from "../errors";
 

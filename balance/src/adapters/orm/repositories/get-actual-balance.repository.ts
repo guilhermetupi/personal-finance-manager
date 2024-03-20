@@ -1,4 +1,4 @@
-import { GetActualBalanceRepositoryPort } from "@/ports/repositories";
+import { GetActualBalanceRepositoryPort } from "@/ports/database/repositories";
 import { DataSource, Repository } from "typeorm";
 import { BalanceModel } from "../models";
 import { Balance } from "@/domain/entities";

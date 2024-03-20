@@ -1,5 +1,5 @@
 import { DataSource, Repository } from "typeorm";
-import { setupTestDataSourceModels } from "@/config/ormconfig";
+import { setupTestDataSource } from "@/config/ormconfig";
 import { BalanceModel } from "@/adapters/orm/models";
 import { makeSut } from "./mock";
 import { InternalServerError } from "@/domain/errors";
@@ -10,7 +10,7 @@ describe("GetActualBalance OrmRepository", () => {
   let repository: Repository<BalanceModel>;
 
   beforeAll(async () => {
-    dataSource = await setupTestDataSourceModels([BalanceModel]);
+    dataSource = await setupTestDataSource([BalanceModel]);
     repository = dataSource.getRepository(BalanceModel);
   });
 

@@ -8,6 +8,6 @@ export class BalanceModel {
   @Column({ type: "decimal", precision: 5, scale: 2, default: 0 })
   amount: number;
 
-  @UpdateDateColumn()
+  @UpdateDateColumn({ type: "timestamp with time zone", default: new Date() })
   updatedAt: Date;
 }
