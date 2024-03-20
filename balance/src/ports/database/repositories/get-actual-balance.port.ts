@@ -1,5 +1,5 @@
 import { Balance } from "@/domain/entities";
-import { InternalServerError } from "@/domain/errors";
+import { InternalServerError, NotFoundError } from "@/domain/errors";
 
 export abstract class GetActualBalanceRepositoryPort {
   abstract execute(

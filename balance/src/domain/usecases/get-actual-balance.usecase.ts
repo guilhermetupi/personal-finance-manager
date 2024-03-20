@@ -1,8 +1,9 @@
 ;import { GetActualBalanceRepositoryPort } from "@/ports/database/repositories";
 import { Balance } from "../entities";
 import { InternalServerError, NotFoundError } from "../errors";
+import { GetActualBalanceUseCasePort } from "@/ports/usecases";
 
-export class GetActualBalanceUseCase {
+export class GetActualBalanceUseCase implements GetActualBalanceUseCasePort {
   constructor(
     private readonly getActualBalanceRepository: GetActualBalanceRepositoryPort
   ) {}

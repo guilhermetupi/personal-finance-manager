@@ -12,13 +12,14 @@ export class BalanceRoute implements HttpRouteAdapterPort<Express.Router> {
   setup(router: Express.Router): void {
     router.get("/:userId", async (req, res) => {
       const { userId } = req.params;
-      const response = await this.getActualBalancePresenter.execute(userId);
+      const { success, data, message } =
+        await this.getActualBalancePresenter.execute(userId);
 
-      if (response.success) {
-        return res.status(200).json({ data: response.data });
+      if (success) {
+        return res.status(200).json({ data });
       }
 
-      return res.status(500).json({ message: response.message });
+      res.status(500).json({ message });
     });
   }
 }

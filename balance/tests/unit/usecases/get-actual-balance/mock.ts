@@ -1,7 +1,7 @@
 import { Balance } from "@/domain/entities";
 import { InternalServerError } from "@/domain/errors";
 import { GetActualBalanceUseCase } from "@/domain/usecases";
-import { GetActualBalanceRepositoryPort } from "@/ports/orm/repositories";
+import { GetActualBalanceRepositoryPort } from "@/ports/database/repositories";
 
 class GetActualBalanceRepositoryStub implements GetActualBalanceRepositoryPort {
   async execute(

@@ -1,5 +1,5 @@
-export type Response<T = undefined> = {
+export type Response<T = null> = {
   success: boolean;
-  data?: T;
+  data: T | null;
   message?: string;
 };

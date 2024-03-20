@@ -17,12 +17,14 @@ export class GetActualBalancePresenter
     if (balance instanceof NotFoundError) {
       return {
         success: true,
+        data: null,
       };
     }
 
     if (balance instanceof InternalServerError) {
       return {
         success: false,
+        data: null,
         message: balance.message,
       };
     }
