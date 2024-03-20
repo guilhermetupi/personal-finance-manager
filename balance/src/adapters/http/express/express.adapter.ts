@@ -11,8 +11,15 @@ export class ExpressHttpAdapter implements HttpAdapterPort {
     private readonly databaseAdapter: DatabaseAdapterPort
   ) {
     this.app = Express();
+  }
+
+  execute(): void {
     this.setupDatabase();
+    this.setupMiddlewares();
     this.setupRoutes();
+    this.app.listen(3000, () => {
+      console.log("Server is running on port 3000");
+    });
   }
 
   private setupDatabase(): void {
@@ -32,12 +39,6 @@ export class ExpressHttpAdapter implements HttpAdapterPort {
       const router = Express.Router();
       route.setup(router);
       this.app.use(`/${route.name}`, router);
-    });
-  }
-
-  execute(): void {
-    this.app.listen(3000, () => {
-      console.log("Server is running on port 3000");
     });
   }
 }
