@@ -12,6 +12,7 @@
       "@/adapters/*": ["./src/adapters/*"],
       "@/domain/*": ["./src/domain/*"],
       "@/ports/*": ["./src/ports/*"],
+      "@/config/*": ["./src/config/*"],
     },
     "incremental": true,
     "skipLibCheck": true,
@@ -20,6 +21,8 @@
     "strictBindCallApply": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
   },
   "exclude": ["node_modules"],
   "include": ["src/**/*.ts", "tests/**/*.ts", "jest.config.js"]

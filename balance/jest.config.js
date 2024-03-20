@@ -1,10 +1,12 @@
 module.exports = {
   preset: "ts-jest",
   testEnvironment: "node",
+  setupFilesAfterEnv: ['<rootDir>/tests/setupTests.ts'],
   moduleNameMapper: {
     "^@/adapters/(.*)$": "<rootDir>/src/adapters/$1",
     "^@/domain/(.*)$": "<rootDir>/src/domain/$1",
     "^@/ports/(.*)$": "<rootDir>/src/ports/$1",
+    "^@/config/(.*)$": "<rootDir>/src/config/$1",
   },
   transform: {
     "^.+\\.ts$": ["ts-jest"],

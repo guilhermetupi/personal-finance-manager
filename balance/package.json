@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "Balance service for personal finance manager app",
   "scripts": {
-    "test": "./node_modules/.bin/jest"
+    "test": "./node_modules/.bin/jest --runInBand --forceExit"
   },
   "license": "ISC",
   "devDependencies": {
@@ -14,5 +14,10 @@
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.2"
+  },
+  "dependencies": {
+    "better-sqlite3": "^9.4.3",
+    "pg": "^8.11.3",
+    "typeorm": "^0.3.20"
   }
 }
