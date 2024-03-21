@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "description": "Balance service for personal finance manager app",
   "scripts": {
-    "test": "./node_modules/.bin/jest --runInBand --forceExit --detectOpenHandles --coverage",
+    "test": "./node_modules/.bin/jest --runInBand --forceExit --detectOpenHandles",
+    "test:coverage": "npm run test -- --coverage",
     "dev": "./node_modules/.bin/nodemon",
     "build": "./node_modules/.bin/rimraf dist && ./node_modules/.bin/tsc",
     "orm:init": "npm run build && ./node_modules/.bin/typeorm -d ./dist/src/config/ormconfig.js",

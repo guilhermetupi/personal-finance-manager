@@ -51,16 +51,13 @@ describe("Express Adapter", () => {
     expect(corsMock).toHaveBeenCalledTimes(1);
   });
 
-  it("should setup middlewares correctly", () => {
-    const expressUseSpy = jest.spyOn(require("express"), "use");
-    const expressJsonSpy = jest.spyOn(require("express"), "json");
-    const corsMock = require("cors");
+  it("should call router for each route adapter", () => {
+    const expressRouterSpy = jest.spyOn(require("express"), "Router");
     const { sut } = makeSut();
 
     sut.execute();
 
-    expect(expressUseSpy).toHaveBeenCalled();
-    expect(expressUseSpy).toHaveBeenCalledWith(expressJsonSpy);
-    expect(expressUseSpy).toHaveBeenCalledWith(corsMock);
+    expect(expressRouterSpy).toHaveBeenCalled();
+    expect(expressRouterSpy).toHaveBeenCalledTimes(1);
   });
 });

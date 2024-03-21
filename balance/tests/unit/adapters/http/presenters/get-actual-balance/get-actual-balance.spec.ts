@@ -48,4 +48,13 @@ describe("GetActualBalance Presenter", () => {
       message: "Internal server error",
     });
   });
+
+  it("should call getActualBalanceUseCase with correct params", async () => {
+    const { sut, getActualBalanceUseCaseStub } = makeSut();
+    const executeSpy = jest.spyOn(getActualBalanceUseCaseStub, "execute");
+
+    await sut.execute(userId);
+
+    expect(executeSpy).toHaveBeenCalledWith(userId);
+  });
 });

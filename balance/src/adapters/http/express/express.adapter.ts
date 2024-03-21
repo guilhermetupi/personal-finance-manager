@@ -7,7 +7,7 @@ export class ExpressHttpAdapter implements HttpAdapterPort {
   private readonly app: Express.Application;
 
   constructor(
-    private readonly routes: HttpRouteAdapterPort<Express.Router>[],
+    private readonly routeAdapters: HttpRouteAdapterPort<Express.Router>[],
     private readonly databaseAdapter: DatabaseAdapterPort
   ) {
     this.app = Express();
@@ -35,7 +35,7 @@ export class ExpressHttpAdapter implements HttpAdapterPort {
   }
 
   private setupRoutes(): void {
-    this.routes.map((route: HttpRouteAdapterPort<Express.Router>) => {
+    this.routeAdapters.map((route: HttpRouteAdapterPort<Express.Router>) => {
       const router = Express.Router();
       route.setup(router);
       this.app.use(`/${route.name}`, router);
