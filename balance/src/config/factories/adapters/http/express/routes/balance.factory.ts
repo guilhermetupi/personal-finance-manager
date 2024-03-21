@@ -1,14 +1,14 @@
 import * as Express from "express";
-import { BalanceRoute } from "@/adapters/http/express/routes";
+import { BalanceExpressRouteAdapter } from "@/adapters/http/express/routes";
 import { HttpRouteAdapterPort } from "@/ports/http";
 import { getActualBalancePresenter } from "../../presenters";
 
-class BalanceRouteFactory {
-  public readonly balanceRoute: HttpRouteAdapterPort<Express.Router>;
+class BalanceExpressRouteAdapterFactory {
+  public readonly BalanceExpressRouteAdapter: HttpRouteAdapterPort<Express.Router>;
 
   constructor() {
-    this.balanceRoute = new BalanceRoute(getActualBalancePresenter);
+    this.BalanceExpressRouteAdapter = new BalanceExpressRouteAdapter(getActualBalancePresenter);
   }
 }
 
-export const { balanceRoute } = new BalanceRouteFactory();
+export const { BalanceExpressRouteAdapter } = new BalanceExpressRouteAdapterFactory();
