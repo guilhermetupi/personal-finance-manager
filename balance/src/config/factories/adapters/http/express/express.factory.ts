@@ -1,6 +1,6 @@
 import { ExpressHttpAdapter } from "@/adapters/http/express";
 import { HttpAdapterPort } from "@/ports/http";
-import { BalanceExpressRouteAdapter } from "./routes";
+import { balanceExpressRouteAdapter } from "./routes";
 import { ormDatabaseAdapter } from "../../orm";
 
 export class ExpressHttpAdapterFactory {
@@ -8,7 +8,7 @@ export class ExpressHttpAdapterFactory {
   
   constructor() {
     this.expressHttpAdapter = new ExpressHttpAdapter(
-      [BalanceExpressRouteAdapter],
+      [balanceExpressRouteAdapter],
       ormDatabaseAdapter
     );
   }
